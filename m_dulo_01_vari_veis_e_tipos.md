@@ -31,8 +31,6 @@ Antes de ver a solução, identifique:
 - Quais atributos devem ser **privados** (`private`)?
 - Qual atributo deve ser **imutável** (`final`)?
 
-*(O instrutor dará 5 minutos para os alunos montarem a estrutura mental)*
-
 ---
 
 # 💡 Solução
