@@ -17,6 +17,7 @@ paginate: true
 Precisamos validar se um código de acesso digitado pelo usuário é igual ao código correto armazenado no sistema.
 
 ### Regra
+- Usar `codigoDigitado` como variável de entrada do usuário.
 - Se o código digitado for **igual** a 1234, exibir `"Acesso permitido"`.
 - Caso contrário, exibir `"Acesso negado"`.
 
