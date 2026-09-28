@@ -7,30 +7,28 @@ paginate: true
 # JAVA 21
 ## Módulo 01 — Variáveis e Tipos
 
-**Metodologia:** Desafio → Solução → Explicação → Novo Desafio → Solução com Explicação
+**Metodologia:** Desafio 1 → Solução 1 → Explicação do Desafio 1 → Desafio Extra → Solução do Desafio Extra → Explicação do Desafio Extra → Desafio Final → Solução do Desafio Final → Explicação do Desafio Final
 
 ---
 
-# 🎯 DESAFIO 1 — Cadastro de Produto
+# 🎯 DESAFIO 1 — Cadastro Inicial de Aluno
 
 ### Contexto
-Precisamos representar as informações de um produto em um estoque de supermercado.
+Uma escola está começando um sistema simples para cadastrar alunos.
 
-### O que fazer:
-Crie um programa que represente um produto com:
-- código
-- nome
-- preço
-- quantidade em estoque
+### Regras
+1. O nome do aluno deve ser armazenado em uma variável de texto.
+2. A idade deve ser armazenada em uma variável numérica inteira.
+3. A informação sobre matrícula ativa deve ser armazenada em uma variável booleana.
+4. O programa deve exibir os três valores no console.
 
-Além disso, o código do produto deve ser **imutável** e não pode mudar depois de definido.
+### Dados de teste
+- `nomeAluno = "Maria"`
+- `idadeAluno = 18`
+- `matriculaAtiva = true`
 
-### Regras:
-1. O produto possui um **código**.
-2. O produto possui um **nome**.
-3. O produto possui um **preço**.
-4. O produto possui uma **quantidade em estoque**.
-5. O código deve ser declarado com `final`.
+### O que o aluno precisa fazer
+Declarar as variáveis com os tipos corretos, atribuir os valores de teste e exibir as informações.
 
 ---
 
@@ -38,357 +36,185 @@ Além disso, o código do produto deve ser **imutável** e não pode mudar depoi
 
 ```java
 public class Main {
+    public static void main(String[] args) {
+        String nomeAluno = "Maria";
+        int idadeAluno = 18;
+        boolean matriculaAtiva = true;
 
-    final int codigo = 101;
-    String nome = "Teclado Mecânico";
-    double preco = 250.50;
-    int quantidade = 15;
-
+        System.out.println("Nome: " + nomeAluno);
+        System.out.println("Idade: " + idadeAluno);
+        System.out.println("Matrícula ativa: " + matriculaAtiva);
+    }
 }
 ```
 
 ---
 
-# 🔍 EXPLICAÇÃO 1 — Tipagem Estática e Variáveis
+# 🔍 EXPLICAÇÃO DO DESAFIO 1
 
-Em Java, toda variável precisa ter um **tipo definido** antes de ser utilizada. Isso é chamado de **tipagem estática**.
+Em Java, toda variável precisa ser declarada com um tipo antes de ser usada. Esse tipo informa ao compilador qual dado pode ser armazenado naquela variável.
 
-### Tipos comuns:
+### Tipos usados na solução
+- `String` guarda textos, como nomes.
+- `int` guarda números inteiros, como idade.
+- `boolean` guarda apenas `true` ou `false`.
 
-- `int`: Números inteiros (ex.: `1`, `10`, `-50`)
-- `double`: Números decimais / ponto flutuante (ex.: `29.90`, `3.14`)
-- `String`: Textos e sequências de caracteres (ex.: `"Teclado"`, `"Java 21"`)
-- `boolean`: Valores lógicos: verdadeiro (`true`) ou falso (`false`)
+### Como ler a declaração
+- `String nomeAluno = "Maria";`
+- `int idadeAluno = 18;`
+- `boolean matriculaAtiva = true;`
 
-### Exemplo:
+Cada linha tem a mesma ideia: **tipo + nome da variável + valor inicial**.
 
-```java
-int quantidade = 15;
-double preco = 250.50;
-String nome = "Teclado Mecânico";
-boolean disponivel = true;
-```
+### Pontos de atenção
+- O nome da variável deve deixar claro o que ela representa.
+- `String` sempre usa aspas duplas.
+- `boolean` não usa aspas: o valor é `true` ou `false`.
 
-Cada variável recebe um tipo específico, e esse tipo define o tipo de dados que ela pode armazenar.
-
----
-
-# 🔍 EXPLICAÇÃO 2 — Imutabilidade com `final`
-
-A palavra-chave `final` impede que o valor de uma variável seja alterado após sua atribuição inicial.
-
-```java
-final int codigo = 10;
-
-// O código abaixo gera ERRO de compilação:
-// codigo = 20;
-```
-
-### Comparação:
-
-```java
-int quantidade = 10;
-quantidade = 20; // OK: variável comum pode mudar
-
-final int codigo = 10;
-// codigo = 20; // ERRO: variável final é constante
-```
-
-### Quando usar `final`?
-Use `final` para valores que devem permanecer fixos, como:
-- código de produto
-- CPF
-- código de acesso
-- constantes de regras de negócio
+### Erros comuns
+- Tentar usar a variável sem declarar o tipo.
+- Escolher nomes genéricos, como `x` ou `valor`.
+- Misturar texto com número na mesma variável.
 
 ---
 
-# ⚠️ ERRO COMUM — Incompatibilidade de Tipos
-
-Tentativa de atribuir um tipo incorreto a uma variável:
-
-```java
-// ERRO DE COMPILAÇÃO!
-int preco = 29.90;
-
-// ERRO DE COMPILAÇÃO!
-boolean nome = "Teclado";
-```
-
-### Por quê?
-Java não converte automaticamente tipos com perda de informação (como `double` para `int`) e também não aceita texto em variáveis booleanas.
-
-### Forma correta:
-
-```java
-double preco = 29.90;
-String nome = "Teclado";
-```
-
----
-
-# 🎯 NOVO DESAFIO 1 — Criando uma Empresa
+# 🎯 DESAFIO EXTRA — Código Fixo do Produto
 
 ### Contexto
-Você precisa modelar uma empresa em um sistema.
+Agora o sistema precisa cadastrar um produto simples.
 
-### O que fazer:
-Crie uma classe Java com:
-- `nomeEmpresa` (String)
-- `cnpj` (String)
-- `quantidadeFuncionarios` (int)
-- `ativa` (boolean)
+### Regras
+1. O código do produto deve ser um número inteiro.
+2. O código do produto não pode mudar depois de definido.
+3. O nome do produto deve ser um texto.
+4. O preço deve ser um número decimal.
+5. O programa deve exibir os dados no console.
 
-**Regra importante:**
-- O `cnpj` deve ser declarado com `final`.
+### Dados de teste
+- `codigoProduto = 101`
+- `nomeProduto = "Teclado Mecânico"`
+- `precoProduto = 250.50`
 
-### Requisitos:
-1. Escolha os tipos corretos para cada dado.
-2. Aplique corretamente o `final`.
-3. Use nomes claros e significativos.
+### O que o aluno precisa fazer
+Declarar as variáveis com os tipos corretos e usar `final` no código do produto.
 
 ---
 
-# 💡 SOLUÇÃO DO NOVO DESAFIO 1
+# 💡 SOLUÇÃO DO DESAFIO EXTRA
 
 ```java
-public class Empresa {
+public class Main {
+    public static void main(String[] args) {
+        final int codigoProduto = 101;
+        String nomeProduto = "Teclado Mecânico";
+        double precoProduto = 250.50;
 
-    String nomeEmpresa = "Lykon Tech";
-    final String cnpj = "12.345.678/0001-99";
-    int quantidadeFuncionarios = 42;
-    boolean ativa = true;
-
-}
-```
-
-### Análise:
-- `String` é usado para textos, como nome e CNPJ.
-- `int` é usado para números inteiros, como quantidade de funcionários.
-- `boolean` representa verdadeiro ou falso, como empresa ativa ou inativa.
-- `final` no CNPJ garante que o documento não será alterado depois da criação.
-
----
-
-# 🎯 DESAFIO 2 — Entendendo a Declaração de Variáveis
-
-### Contexto
-Você precisa guardar o nome de um aluno e sua idade em um sistema escolar.
-
-### O que fazer:
-Crie um programa que:
-1. Armazene o nome do aluno em uma variável de texto.
-2. Armazene a idade em uma variável numérica inteira.
-3. Exiba os valores no console.
-
-**Teste com:**
-- `nome = "Maria"`
-- `idade = 18`
-
----
-
-# 💡 SOLUÇÃO 2
-
-```java
-String nome = "Maria";
-int idade = 18;
-
-System.out.println(nome);
-System.out.println(idade);
-```
-
----
-
-# 🔍 EXPLICAÇÃO 3 — Declaração e Uso de Variáveis
-
-Uma variável em Java precisa ser declarada antes de ser utilizada.
-
-```java
-String nome;
-nome = "Maria";
-```
-
-Também é possível declarar e atribuir na mesma linha:
-
-```java
-String nome = "Maria";
-```
-
-### Boas práticas:
-- Use nomes descritivos
-- Comece com letra minúscula
-- Evite nomes genéricos como `x`, `a`, `valor`
-
-Exemplos bons:
-
-```java
-String nomeAluno = "Maria";
-int idadeAluno = 18;
-boolean alunoAtivo = true;
-```
-
----
-
-# 🎯 NOVO DESAFIO 2 — Nome e Status do Cliente
-
-### Contexto
-Você precisa guardar dados de um cliente em um sistema de vendas.
-
-### O que fazer:
-Crie um programa que:
-1. Guarda o nome do cliente em uma variável `String`.
-2. Guarda se ele está ativo (`true` ou `false`) em uma variável `boolean`.
-3. Exiba as informações em console.
-
-**Teste com:**
-- `nomeCliente = "Carlos"`
-- `clienteAtivo = true`
-
----
-
-# 💡 SOLUÇÃO DO NOVO DESAFIO 2
-
-```java
-String nomeCliente = "Carlos";
-boolean clienteAtivo = true;
-
-System.out.println("Nome do cliente: " + nomeCliente);
-System.out.println("Cliente ativo: " + clienteAtivo);
-```
-
-### Análise:
-- `String` armazena texto.
-- `boolean` representa um valor lógico.
-- O operador `+` concatena textos e valores em uma mensagem.
-
----
-
-# 🎯 DESAFIO 3 — Modelando uma Pessoa
-
-### Contexto
-Você precisa representar uma pessoa em um sistema.
-
-### O que fazer:
-Crie um programa que armazene:
-- nome
-- idade
-- altura
-- está empregado
-
-Escolha os tipos corretos para cada dado.
-
----
-
-# 💡 SOLUÇÃO 3
-
-```java
-String nome = "Ana";
-int idade = 27;
-double altura = 1.68;
-boolean estaEmpregado = true;
-```
-
----
-
-# 🔍 EXPLICAÇÃO 4 — Escolha do Tipo Correto
-
-Cada informação tem um tipo que melhor representa sua natureza:
-
-```java
-String nome = "Ana";          // texto
-int idade = 27;               // número inteiro
-double altura = 1.68;        // número decimal
-boolean estaEmpregado = true; // verdadeiro ou falso
-```
-
-### Regra prática:
-- Use `int` para contagens e números inteiros.
-- Use `double` para valores monetários e medidas decimais.
-- Use `String` para textos.
-- Use `boolean` para respostas lógicas.
-
----
-
-# 🎯 DESAFIO FINAL — Modelando uma Loja
-
-### Contexto
-Criar uma estrutura básica para uma loja online.
-
-### Regras de negócio:
-1. O nome da loja deve ser um texto.
-2. O número de produtos deve ser inteiro.
-3. O faturamento mensal deve ser decimal.
-4. A loja deve indicar se está aberta ou fechada.
-5. O CNPJ da loja deve ser imutável.
-
-### O que fazer:
-Declare as variáveis corretamente e aplique `final` no CNPJ.
-
----
-
-# 💡 SOLUÇÃO FINAL
-
-```java
-public class Loja {
-
-    String nome = "Loja Central";
-    int quantidadeProdutos = 120;
-    double faturamentoMensal = 18500.75;
-    boolean aberta = true;
-    final String cnpj = "11.222.333/0001-44";
-
+        System.out.println("Código: " + codigoProduto);
+        System.out.println("Produto: " + nomeProduto);
+        System.out.println("Preço: " + precoProduto);
+    }
 }
 ```
 
 ---
 
-# 🔍 EXPLICAÇÃO FINAL — Fluxo Prático do Módulo
+# 🔍 EXPLICAÇÃO DO DESAFIO EXTRA
 
-### O que aprendemos?
+A palavra-chave `final` impede uma nova atribuição depois que a variável recebe o primeiro valor.
 
-- Variáveis guardam dados.
-- Cada variável precisa ter um tipo.
-- `final` torna o valor imutável.
-- O tipo deve ser compatível com o dado representado.
-- O código fica mais claro quando usamos nomes significativos.
-
-### Fluxo básico:
-
+### O que isso significa na prática?
 ```java
-String nome = "Maria";
-int idade = 18;
-boolean ativo = true;
-final String cpf = "123.456.789-00";
+final int codigoProduto = 101;
+// codigoProduto = 202; // erro de compilação
 ```
 
-### Exemplo de uso em regra de negócio:
+O código do produto é um bom candidato para `final` porque representa uma informação que não deveria mudar ao longo da execução.
 
-```java
-String produto = "Teclado";
-int quantidade = 15;
-double preco = 250.50;
-final int codigo = 101;
-```
+### Tipos escolhidos
+- `int` para o código, porque é um número inteiro.
+- `String` para o nome, porque é texto.
+- `double` para o preço, porque pode ter casas decimais.
 
-> Esse é o começo de qualquer programa Java: definir dados, escolher tipos e organizar regras de negócio.
+### Pontos de atenção
+- `final` bloqueia a troca da referência ou do valor da variável, não apenas a impressão no console.
+- `double` é mais adequado do que `int` para valores com centavos.
+
+### Erros comuns
+- Declarar preço com `int` quando existe parte decimal.
+- Tentar reatribuir uma variável marcada com `final`.
+- Criar nomes vagos, como `nome` e `valor`, em exemplos que já têm mais de um dado.
 
 ---
 
-# 📋 RESUMO DO MÓDULO
+# 🎯 DESAFIO FINAL — Corrigindo Tipos Incompatíveis
 
-| Conceito | Uso | Exemplo |
-| :--- | :--- | :--- |
-| `int` | Números inteiros | `int idade = 18;` |
-| `double` | Números decimais | `double preco = 29.90;` |
-| `String` | Textos | `String nome = "Maria";` |
-| `boolean` | Verdadeiro/Falso | `boolean ativo = true;` |
-| `final` | Torna variável imutável | `final int codigo = 101;` |
+### Contexto
+Um colega montou um rascunho de cadastro de empresa, mas o código não compila.
+
+### Regras
+1. O nome da empresa deve continuar sendo um texto.
+2. O CNPJ deve continuar sendo um texto e não pode mudar depois de definido.
+3. A quantidade de funcionários deve ser numérica e inteira.
+4. A empresa deve informar se está ativa com um valor booleano.
+5. O programa deve ser corrigido sem mudar o objetivo do cadastro.
+
+### Dados de teste
+Use este rascunho como ponto de partida:
+
+```java
+String nomeEmpresa = 500;
+final String cnpj = "12.345.678/0001-99";
+double quantidadeFuncionarios = 42;
+boolean empresaAtiva = "sim";
+```
+
+### O que o aluno precisa fazer
+Corrigir os tipos incompatíveis para que o cadastro represente os dados corretamente e o programa possa ser executado.
 
 ---
 
-# 🎓 Próximos Passos
+# 💡 SOLUÇÃO DO DESAFIO FINAL
 
-- Pratique a criação de classes simples.
-- Use `final` em valores que não devem mudar.
-- Escolha tipos com cuidado para cada informação.
-- Continue para o próximo módulo e veja como as variáveis se conectam com condicionais.
+```java
+public class Main {
+    public static void main(String[] args) {
+        String nomeEmpresa = "Lykon Tech";
+        final String cnpj = "12.345.678/0001-99";
+        int quantidadeFuncionarios = 42;
+        boolean empresaAtiva = true;
+
+        System.out.println("Empresa: " + nomeEmpresa);
+        System.out.println("CNPJ: " + cnpj);
+        System.out.println("Funcionários: " + quantidadeFuncionarios);
+        System.out.println("Ativa: " + empresaAtiva);
+    }
+}
+```
+
+---
+
+# 🔍 EXPLICAÇÃO DO DESAFIO FINAL
+
+O problema do rascunho original era a incompatibilidade entre o tipo declarado e o valor atribuído.
+
+### Ajustes feitos
+- `String nomeEmpresa = "Lykon Tech";` porque nome é texto.
+- `int quantidadeFuncionarios = 42;` porque contagem de pessoas usa número inteiro.
+- `boolean empresaAtiva = true;` porque o status precisa ser `true` ou `false`.
+- `final String cnpj = "12.345.678/0001-99";` foi mantido porque o CNPJ continua sendo um texto fixo.
+
+### Por que o código original falhava?
+```java
+String nomeEmpresa = 500;      // número em variável de texto
+boolean empresaAtiva = "sim"; // texto em variável booleana
+```
+
+Java é uma linguagem de tipagem estática. Isso significa que o compilador verifica se o tipo da variável combina com o valor informado.
+
+### Pontos de atenção
+- `int` e `double` não são a mesma coisa: contagem usa `int`, valores com casas decimais usam `double`.
+- `boolean` aceita apenas `true` ou `false`.
+- Corrigir o tipo não é “enfeite”: é o que faz o programa compilar e representar o dado certo.
+
+### Fechamento do módulo
+Neste módulo, você praticou declaração de variáveis, escolha do tipo correto, uso de `final` e correção de incompatibilidade de tipos.

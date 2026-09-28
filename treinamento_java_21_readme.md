@@ -6,14 +6,33 @@ Bem-vindo ao material do **Treinamento Java 21 — Nível Básico**! Este curso 
 
 ## 🎯 Metodologia
 
-O treinamento adota a seguinte metodologia em todos os módulos:
+Todos os módulos devem seguir a mesma sequência pedagógica:
 
-$$\text{Desafio} \longrightarrow \text{Solução} \longrightarrow \text{Explicação} \longrightarrow \text{Evolução}$$
+1. **Desafio 1:** apresenta apenas o contexto, as regras, os dados de teste e o que o aluno precisa fazer.
+2. **Solução 1:** apresenta a implementação do Desafio 1.
+3. **Explicação do Desafio 1:** detalha a solução, com avisos, erros comuns e pontos de atenção.
+4. **Desafio Extra:** propõe um novo exercício para consolidar o aprendizado, apenas com o enunciado.
+5. **Solução do Desafio Extra:** apresenta a implementação do desafio extra.
+6. **Explicação do Desafio Extra:** detalha a solução, com avisos e pontos de atenção.
+7. **Desafio Final:** aparece somente quando o módulo trabalha mais de um conceito e precisa integrar o conteúdo estudado.
+8. **Solução do Desafio Final:** apresenta a implementação completa do desafio final.
+9. **Explicação do Desafio Final:** analisa a solução final e reforça os cuidados importantes.
 
-1. **Desafio:** Apresentação de um problema real/prático com regras claras.
-2. **Solução:** Apresentação da implementação em código Java simples e legível.
-3. **Explicação:** Detalhamento do funcionamento dos conceitos, com exemplos, erros comuns e dicas de *Clean Code*.
-4. **Evolução:** Ampliação do desafio para solidificar a aprendizagem.
+### Regras de padronização
+
+- Não incluir seções de **Evolução**.
+- Não incluir seções de **Próximos Passos**.
+- Não antecipar explicações antes do respectivo **Desafio 1**.
+- Preferir os títulos:
+  - `🎯 DESAFIO 1`
+  - `💡 SOLUÇÃO 1`
+  - `🔍 EXPLICAÇÃO DO DESAFIO 1`
+  - `🎯 DESAFIO EXTRA`
+  - `💡 SOLUÇÃO DO DESAFIO EXTRA`
+  - `🔍 EXPLICAÇÃO DO DESAFIO EXTRA`
+  - `🎯 DESAFIO FINAL`
+  - `💡 SOLUÇÃO DO DESAFIO FINAL`
+  - `🔍 EXPLICAÇÃO DO DESAFIO FINAL`
 
 ---
 
@@ -21,11 +40,11 @@ $$\text{Desafio} \longrightarrow \text{Solução} \longrightarrow \text{Explica�
 
 | Arquivo | Descrição |
 | :--- | :--- |
-| `00-template.md` | Template base reutilizável para criação de novas aulas em Marp |
-| `01-variaveis.md` | Tipos primitivos, String, modificadores (`public`, `private`, `final`) e imutabilidade |
-| `02-if.md` | Controle de fluxo, operadores relacionais e lógicos, booleanos e *Clean Code* |
-| `03-comparacoes.md` | Diferenças conceituais e práticas entre `==`, `equals()`, `contentEquals()` e `compareTo()` |
-| `04-roadmap.md` | Visão geral da jornada de aprendizado do básico até o avançado |
+| `template_de_slide_marp.md` | Template base reutilizável para criação de novas aulas em Marp |
+| `modulo_01_variaveis_e_tipos.md` | Tipos, declaração de variáveis, `final` e incompatibilidade de tipos |
+| `modulo_02_condicoes.md` | Condições, operadores relacionais e operadores lógicos |
+| `m_dulo_03_compara_es.md` | Comparações com `==`, `equals()`, `contentEquals()` e `compareTo()` |
+| `roadmap_do_treinamento.md` | Visão geral da jornada de aprendizado do básico até o avançado |
 
 ---
 
