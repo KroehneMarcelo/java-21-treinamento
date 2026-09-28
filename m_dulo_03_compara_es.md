@@ -29,13 +29,13 @@ if (codigo1 == codigo2) {
 # 🎯 Parte 2 — Desafio: Comparando Strings
 
 ### Problema
-Verificar se o nome de um cliente digitado é `"Marcelo"`.
+Verificar se o nome de um cliente digitado é `"João"`.
 
 ### ⚠️ O erro comum
 ```java
-String nome = "Marcelo";
+String nome = "João";
 
-if (nome == "Marcelo") { // CUIDADO!
+if (nome == "João") { // CUIDADO!
     System.out.println("Nome encontrado");
 }
 ```
@@ -49,9 +49,9 @@ if (nome == "Marcelo") { // CUIDADO!
 Para comparar o **conteúdo textual** de duas Strings, utilize o método `.equals()`:
 
 ```java
-String nome = "Marcelo";
+String nome = "João";
 
-if (nome.equals("Marcelo")) {
+if (nome.equals("João")) {
     System.out.println("Nome encontrado");
 }
 ```
@@ -69,10 +69,10 @@ Se a variável `nome` estiver nula (`null`), chamar `nome.equals(...)` causa um 
 String nome = null;
 
 // ❌ Riscos de erro (NullPointerException):
-// if (nome.equals("Marcelo"))
+// if (nome.equals("João"))
 
 // ✅ Seguro contra Null:
-if ("Marcelo".equals(nome)) {
+if ("João".equals(nome)) {
     System.out.println("Nome encontrado");
 }
 ```
@@ -84,8 +84,8 @@ if ("Marcelo".equals(nome)) {
 E se precisarmos comparar uma `String` com outro tipo de sequência de texto (como um `StringBuilder`)?
 
 ```java
-String nome = "Marcelo";
-StringBuilder outro = new StringBuilder("Marcelo");
+String nome = "João";
+StringBuilder outro = new StringBuilder("João");
 
 if (nome.contentEquals(outro)) {
     System.out.println("Conteúdo exatamente igual");
