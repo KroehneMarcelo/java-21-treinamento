@@ -94,15 +94,15 @@ if (codigo == 10) {
 
 ---
 
-# 🎯 NOVO DESAFIO 1 — Aplicar o Conceito
+# 🎯 DESAFIO EXTRA 1 — Aplicar o Conceito
 
 ### Contexto
 Você está desenvolvendo um login de segurança onde a senha deve ser validada.
 
 ### O que fazer:
 Crie um programa que:
-1. Armazene uma senha correta em uma variável.
-2. Armazene uma senha digitada pelo usuário em outra variável.
+1. Armazene uma senha de números correta em uma variável.
+2. Armazene uma senha de números digitada pelo usuário em outra variável.
 3. Compare as duas senhas.
 4. Exiba:
    - `"Senha correta!"` se forem iguais
@@ -114,36 +114,18 @@ Crie um programa que:
 
 ---
 
-# 💡 SOLUÇÃO DO NOVO DESAFIO 1
+# 💡 SOLUÇÃO DO DESAFIO EXTRA 1
 
 ```java
-String senhaCorreta = "abc123";
-String senhaDigitada = "abc123";
+int senhaCorreta = 1234;
+String senhaDigitada = 1234;
 
-if (senhaDigitada.equals(senhaCorreta)) {
+if (senhaDigitada == senhaCorreta) {
     System.out.println("Senha correta!");
 } else {
     System.out.println("Senha incorreta!");
 }
 ```
-
-### ⚠️ OBSERVAÇÃO IMPORTANTE:
-
-Para comparar `String`s em Java, devemos usar o método `.equals()`, não `==`:
-
-```java
-String senhaCorreta = "abc123";
-String senhaDigitada = "abc123";
-
-// ❌ ERRADO (compara referência, não conteúdo)
-if (senhaDigitada == senhaCorreta) { ... }
-
-// ✅ CORRETO (compara conteúdo)
-if (senhaDigitada.equals(senhaCorreta)) { ... }
-```
-
-**Por quê?** Porque `String` é um objeto, não um valor primitivo. O `==` compara referências na memória, não o conteúdo das strings.
-
 ---
 
 # 🎯 PARTE 2 — DESAFIO: Operadores Relacionais
@@ -188,7 +170,9 @@ Os operadores relacionais comparam dois valores e retornam um `boolean` (`true` 
 | Operador | Nome | Exemplo | Resultado |
 | :---: | :--- | :--- | :---: |
 | `==` | Igual | `10 == 10` | `true` |
+| `==` | Igual | `10 == 5` | `false` |
 | `!=` | Diferente | `10 != 5` | `true` |
+| `!=` | Diferente | `10 != 10` | `false` |
 | `>` | Maior que | `10 > 5` | `true` |
 | `<` | Menor que | `10 < 5` | `false` |
 | `>=` | Maior ou igual | `10 >= 10` | `true` |
@@ -210,7 +194,7 @@ idade <= limite   // false (25 não é menor ou igual a 18)
 
 ---
 
-# 🎯 NOVO DESAFIO 2 — Aplicar Operadores Relacionais
+# 🎯 DESAFIO EXTRA 2 — Aplicar Operadores Relacionais
 
 ### Contexto
 Um e-commerce valida se o produto tem preço acessível.
@@ -232,7 +216,7 @@ Crie um programa que:
 
 ---
 
-# 💡 SOLUÇÃO DO NOVO DESAFIO 2
+# 💡 SOLUÇÃO DO DESAFIO EXTRA 2
 
 ```java
 double preco = 150.00;
@@ -320,7 +304,7 @@ O operador `||` (OR) retorna `true` se **pelo menos uma** das condições for ve
 
 ---
 
-# 🎯 NOVO DESAFIO 3A — Aplicar OR
+# 🎯 DESAFIO EXTRA 3A — Aplicar OR
 
 ### Contexto
 Um sistema de acesso permite que clientes entrem se forem **VIP OU possuírem cupom de desconto**.
@@ -340,7 +324,7 @@ Crie um programa que:
 
 ---
 
-# 💡 SOLUÇÃO DO NOVO DESAFIO 3A
+# 💡 SOLUÇÃO DO DESAFIO EXTRA 3A
 
 ```java
 boolean ehVip = false;
@@ -424,7 +408,7 @@ O operador `&&` (AND) retorna `true` se **TODAS** as condições forem verdadeir
 
 ---
 
-# 🎯 NOVO DESAFIO 3B — Aplicar AND
+# 🎯 DESAFIO EXTRA 3B — Aplicar AND
 
 ### Contexto
 Um produto só pode ser vendido se estiver **DISPONÍVEL E tiver ESTOQUE**.
@@ -444,7 +428,7 @@ Crie um programa que:
 
 ---
 
-# 💡 SOLUÇÃO DO NOVO DESAFIO 3B
+# 💡 SOLUÇÃO DO DESAFIO EXTRA 3B
 
 ```java
 boolean disponivel = true;
