@@ -11,7 +11,104 @@ paginate: true
 
 ---
 
-# 🎯 Parte 1 — Desafio: Verificação de Idade
+# 🎯 Parte 1 — Desafio: Verificação de Igualdade
+
+### Contexto
+Precisamos validar se um código de acesso digitado pelo usuário é igual ao código correto armazenado no sistema.
+
+### Regra
+- Se o código digitado for **igual** a 1234, exibir `"Acesso permitido"`.
+- Caso contrário, exibir `"Acesso negado"`.
+
+---
+
+# 💡 Solução: Parte 1
+
+```java
+int codigoDigitado = 1234;
+int codigoCorreto = 1234;
+
+if (codigoDigitado == codigoCorreto) {
+    System.out.println("Acesso permitido");
+} else {
+    System.out.println("Acesso negado");
+}
+```
+
+---
+
+# 🔍 Explicação: `if` e `else`
+
+- **`if`**: Avalia uma expressão booleana. Se for `true`, executa o bloco de código.
+- **`else`**: Executado quando a condição do `if` resulta em `false`.
+- **Operador `==`**: Compara se dois **valores primitivos** são iguais, retornando `true` ou `false`.
+
+```java
+boolean acessoValido = codigoDigitado == codigoCorreto; // Avalia para true ou false
+```
+
+---
+
+# 🎯 Parte 2 — Explicação: Operadores Relacionais
+
+Os operadores relacionais comparam dois valores e retornam um `boolean` (`true` ou `false`).
+
+### Operadores Disponíveis:
+
+| Operador | Nome | Exemplo | Resultado |
+| :---: | :--- | :--- | :---: |
+| `==` | Igual | `10 == 10` | `true` |
+| `!=` | Diferente | `10 != 5` | `true` |
+| `>` | Maior que | `10 > 5` | `true` |
+| `<` | Menor que | `10 < 5` | `false` |
+| `>=` | Maior ou igual | `10 >= 10` | `true` |
+| `<=` | Menor ou igual | `10 <= 5` | `false` |
+
+---
+
+# 💡 Exemplos Práticos: Operadores Relacionais
+
+```java
+int idade = 25;
+int limite = 18;
+
+idade > limite    // true (25 é maior que 18)
+idade < limite    // false (25 não é menor que 18)
+idade == limite   // false (25 não é igual a 18)
+idade != limite   // true (25 é diferente de 18)
+idade >= limite   // true (25 é maior ou igual a 18)
+idade <= limite   // false (25 não é menor ou igual a 18)
+```
+
+---
+
+# ⚠️ Erro Comum: Confundir Atribuição (`=`) com Comparação (`==`)
+
+Em muitas linguagens isso causa bugs silenciosos. Em Java, o código abaixo **nem compila**:
+
+```java
+int codigo = 10;
+
+// ERRO DE COMPILAÇÃO!
+if (codigo = 10) {
+    System.out.println("Código correto");
+}
+```
+
+**Por quê?** O comando `(codigo = 10)` atribui o valor 10, mas o `if` exige uma expressão que resulte em `boolean` (`true`/`false`).
+
+### Comparação Correta:
+
+```java
+// ✅ Correto: == compara, não atribui
+if (codigo == 10) {
+    System.out.println("Código correto");
+}
+```
+
+---
+
+# 🎯 Parte 3 — Desafio: Verificação de Idade
 
 ### Contexto
 Precisamos validar se um cliente pode comprar um ingresso para um evento restrito.
@@ -22,7 +119,7 @@ Precisamos validar se um cliente pode comprar um ingresso para um evento restrit
 
 ---
 
-# 💡 Solução: Parte 1
+# 💡 Solução: Parte 3
 
 ```java
 int idade = 20;
@@ -36,77 +133,16 @@ if (idade >= 18) {
 
 ---
 
-# 🔍 Explicação: `if` e `else`
-
-- **`if`**: Avalia uma expressão booleana. Se for `true`, executa o bloco de código.
-- **`else`**: Executado quando a condição do `if` resulta em `false`.
-- **Operador `>=`**: Verifica se o valor da esquerda é maior ou igual ao da direita.
-
-```java
-boolean eMaior = idade >= 18; // Avalia para true ou false
-```
-
----
-
-# 🎯 Parte 2 — Desafio: Atribuição (`=`) vs Comparação (`==`)
-
-### Contexto
-Verificar se o código de um produto cadastrado no sistema é igual a 10.
-
----
-
-# 💡 Solução: Parte 2
-
-```java
-int codigo = 10;
-
-if (codigo == 10) {
-    System.out.println("Produto encontrado");
-}
-```
-
----
-
-# 🔍 Explicação: `=` vs `==`
-
-- **`=` (Atribuição):** Guarda um valor dentro de uma variável.
-  ```java
-  int codigo = 10; // Armazena 10 na variável codigo
-  ```
-- **`==` (Comparação):** Compara se dois valores primitivos são iguais e retorna um `boolean`.
-  ```java
-  codigo == 10 // Retorna true
-  ```
-
----
-
-# ⚠️ Erro Comum: Confundir Atribuição com Comparação
-
-Em muitas linguagens isso causa bugs silenciosos. Em Java, o código abaixo **nem compila**:
-
-```java
-int codigo = 10;
-
-// ERRO DE COMPILAÇÃO!
-if (codigo = 10) { 
-    System.out.println("Produto encontrado");
-}
-```
-
-**Por quê?** O comando `(codigo = 10)` atribui o valor 10, mas o `if` exige uma expressão que resulte em `boolean` (`true`/`false`).
-
----
-
-# 🎯 Parte 3 — Trabalhando com Variáveis Booleanas
+# 🎯 Parte 4 — Trabalhando com Variáveis Booleanas
 
 Podemos armazenar o resultado de uma comparação diretamente em uma variável `boolean`:
 
 ```java
-int codigo = 10;
-boolean produtoEncontrado = codigo == 10;
+int idade = 20;
+boolean ehMaiorDeIdade = idade >= 18;
 
-if (produtoEncontrado) {
-    System.out.println("Produto encontrado");
+if (ehMaiorDeIdade) {
+    System.out.println("Pessoa maior de idade");
 }
 ```
 
@@ -115,28 +151,30 @@ if (produtoEncontrado) {
 # 🔍 Explicação e Clean Code: Expressões Booleanas
 
 ### Evite redundâncias:
+
 ```java
 // ❌ Ruim (Redundante)
-if (produtoEncontrado == true) { ... }
+if (ehMaiorDeIdade == true) { ... }
 
 // ✅ Limpo (Idiomático)
-if (produtoEncontrado) { ... }
+if (ehMaiorDeIdade) { ... }
 ```
 
 ### Para negação (`!`):
+
 ```java
 // ❌ Ruim
-if (produtoEncontrado == false) { ... }
+if (ehMaiorDeIdade == false) { ... }
 
 // ✅ Limpo (Operador de negação NOT)
-if (!produtoEncontrado) {
-    System.out.println("Produto não encontrado");
+if (!ehMaiorDeIdade) {
+    System.out.println("Pessoa menor de idade");
 }
 ```
 
 ---
 
-# 🎯 Parte 4 — Operador Lógico OR (`||`)
+# 🎯 Parte 5 — Operador Lógico OR (`||`)
 
 ### Contexto
 Um produto ganha desconto especial se seu código for 10 **OU** 11.
@@ -150,6 +188,7 @@ if (codigo == 10 || codigo == 11) {
 ```
 
 ### Tabela Verdade — OR (`||`)
+
 | Condição A | Condição B | Resultado (`A \|\| B`) |
 | :---: | :---: | :---: |
 | `true` | `false` | **`true`** |
@@ -158,7 +197,7 @@ if (codigo == 10 || codigo == 11) {
 
 ---
 
-# 🎯 Parte 5 — Operador Lógico AND (`&&`)
+# 🎯 Parte 6 — Operador Lógico AND (`&&`)
 
 ### Contexto
 Um usuário só pode acessar o sistema se estiver **ativo** **E** tiver **permissão**.
@@ -173,6 +212,7 @@ if (usuarioAtivo && possuiPermissao) {
 ```
 
 ### Tabela Verdade — AND (`&&`)
+
 | Condição A | Condição B | Resultado (`A && B`) |
 | :---: | :---: | :---: |
 | `true` | `true` | **`true`** |
@@ -181,7 +221,7 @@ if (usuarioAtivo && possuiPermissao) {
 
 ---
 
-# 🎯 Parte 6 — Combinação de Condições e Precedência
+# 🎯 Parte 7 — Combinação de Condições e Precedência
 
 ### Contexto
 Acesso permitido se:
@@ -220,3 +260,19 @@ Assim como na matemática, os parênteses `()` definem a ordem de avaliação:
 | `if (a == true && b == true)` | `if (a && b)` |
 
 > *Clean code não é sobre economizar letras, é sobre comunicar intenção.*
+
+---
+
+# 🚀 Exercício Prático Final
+
+Crie um programa que valide se um produto pode ser vendido.
+
+### Regras de Negócio:
+1. O produto deve estar **disponível** (`boolean`).
+2. A quantidade em estoque deve ser **maior que zero** (`int`).
+3. O preço deve ser **maior ou igual a 10.00** (`double`).
+
+### Condições de Venda:
+- Venda permitida se **todas as três condições** forem verdadeiras.
+- Use operadores relacionais e lógicos apropriados.
+- Aplique as regras de **Clean Code** aprendidas.
