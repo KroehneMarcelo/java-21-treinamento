@@ -19,7 +19,6 @@ Precisamos representar as informações de um produto em um estoque de supermerc
 ### Regras
 1. Todo produto possui um **código**, um **nome**, um **preço** e uma **quantidade em estoque**.
 2. O código do produto é atribuído uma única vez e **nunca mais pode ser alterado**.
-3. Os dados do produto não devem ser alterados diretamente por classes externas sem autorização.
 
 ---
 
@@ -28,7 +27,6 @@ Precisamos representar as informações de um produto em um estoque de supermerc
 Antes de ver a solução, identifique:
 
 - Quais tipos de dados representam melhor cada informação?
-- Quais atributos devem ser **privados** (`private`)?
 - Qual atributo deve ser **imutável** (`final`)?
 
 ---
@@ -36,12 +34,12 @@ Antes de ver a solução, identifique:
 # 💡 Solução
 
 ```java
-public class Produto {
+public class Main {
 
-    private final int codigo = 101;
-    private String nome = "Teclado Mecânico";
-    private double preco = 250.50;
-    private int quantidade = 15;
+    final int codigo = 101;
+    String nome = "Teclado Mecânico";
+    double preco = 250.50;
+    int quantidade = 15;
 
 }
 ```
@@ -56,22 +54,6 @@ Em Java, toda variável precisa ter um **tipo definido** antes de ser utilizada.
 - `double`: Números decimais / ponto flutuante (ex: $29.90, 3.14$).
 - `String`: Textos e sequências de caracteres (ex: `"Teclado"`, `"Java 21"`).
 - `boolean`: Valores lógicos: verdadeiro (`true`) ou falso (`false`).
-
----
-
-# 🔍 Explicação: Visibilidade com `private` e `public`
-
-### `private`
-```java
-private String nome;
-```
-Indica que o atributo só pode ser lido ou alterado **dentro da própria classe**. Isso protege os dados contra alterações indevidas de fora.
-
-### `public`
-```java
-public class Produto { ... }
-```
-Indica que a estrutura (ou membro) está **visível e acessível para qualquer outra classe** do projeto.
 
 ---
 
@@ -114,16 +96,8 @@ Java não converte automaticamente tipos com perda de informação (como `double
 
 ---
 
-# 🛑 O que NÃO veremos ainda?
-
-Neste primeiro módulo, é proposital **NÃO** utilizarmos:
-- Construtores
-- Palavra-chave `this`
-- Palavra-chave `static`
-- Métodos Getters e Setters
-
 **Objetivo deste módulo:** Compreender o fluxo básico:
-$$\text{variáveis} \longrightarrow \text{tipos} \longrightarrow \text{acesso} \longrightarrow \text{imutabilidade}$$
+$$\text{variáveis} \longrightarrow \text{tipos} \longrightarrow \text{imutabilidade}$$
 
 ---
 
@@ -137,5 +111,5 @@ Crie uma classe Java para representar uma **Empresa**.
    - CNPJ (o CNPJ não pode mudar após definido)
    - Quantidade de Funcionários
    - Situação (Ativa ou Inativa)
-2. Aplique corretamente `private`, `public` e `final`.
+2. Aplique corretamente o `final`.
 3. Escolha os tipos primitivos e de objetos corretos.
