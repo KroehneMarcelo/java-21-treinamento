@@ -202,7 +202,6 @@ public class Main {
         boolean perfilPermitido = "ADMIN".equals(perfil) || "OPERADOR".equals(perfil);
         boolean usuarioPermitido = !"GUEST".equals(nomeUsuario);
         boolean senhaCorreta = senhaCadastrada != null && senhaCadastrada.equals(senhaDigitada);
-        boolean senhaCorreta = senhaCadastrada != null && senhaCadastrada.equals(senhaDigitada);
         boolean loginAutorizado = usuarioAtivo && perfilPermitido && usuarioPermitido && senhaCorreta;
 
         if (loginAutorizado) {
@@ -236,6 +235,7 @@ Por isso, a forma mais segura é deixar o texto fixo à esquerda:
 ```java
 boolean perfilPermitido = "ADMIN".equals(perfil) || "OPERADOR".equals(perfil);
 boolean usuarioPermitido = !"GUEST".equals(nomeUsuario);
+boolean senhaCorreta = senhaCadastrada != null && senhaCadastrada.equals(senhaDigitada);
 ```
 
 ### O que a validação final faz?
